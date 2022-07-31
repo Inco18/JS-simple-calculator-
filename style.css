@@ -1,0 +1,183 @@
+/* CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* STYLING */
+:root {
+  --grey-0: #5a5a5a;
+  --grey-50: #383838;
+  --grey-100: #343434;
+  --grey-200: #333333;
+  --grey-300: #2e2e2e;
+  --grey-400: #2c2c2c;
+  --grey-500: #272727;
+  --grey-600: #242424;
+  --grey-700: #222222;
+  --grey-800: #1e1e1e;
+  --grey-900: #121212;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: var(--grey-900);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: clamp(320px, 150vw, 500px);
+  width: 350px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: var(--grey-800);
+}
+
+.result {
+  grid-column: 1/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0.5rem;
+  width: 100%;
+  position: relative;
+}
+.act {
+  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 11vw, 2.5rem);
+  position: absolute;
+  bottom: 0;
+  right: 0.5rem;
+}
+.prev {
+  font-size: 0.7rem;
+  font-size: clamp(0.4rem, 3.3vw, 0.7rem);
+  opacity: 50%;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+button {
+  border: 2px solid var(--grey-800);
+  font-size: 1.5rem;
+}
+.btn-number {
+  background-color: var(--grey-900);
+}
+.zero {
+  grid-column: 1/3;
+}
+.btn-func {
+  background-color: var(--grey-600);
+}
+
+.btn-resolve {
+  background-color: rgb(1, 87, 1);
+  grid-row: 5/7;
+  grid-column: 4/5;
+}
+
+button:not(.btn-resolve):hover {
+  background-color: var(--grey-200);
+}
+button:not(.btn-resolve):active {
+  background-color: var(--grey-0);
+}
+.btn-resolve:hover {
+  background-color: rgb(1, 124, 1);
+}
+.btn-resolve:active {
+  background-color: rgb(2, 150, 2);
+}
+
+.btn-disabled {
+  pointer-events: none;
+}
+.btn-disabled * {
+  color: var(--grey-400);
+}
+
+.author {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.author i {
+  margin: 0 0.3rem 0 1rem;
+}
+
+.author a {
+  text-decoration: none;
+}
